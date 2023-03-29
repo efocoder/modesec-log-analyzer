@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+<div class="row justify-content-center" style="margin-top: 5%">
+    <h3 class="text-center py-2">Register to use the app!</h3>
+    <div class=" col-md-5 card p-5">
+        <form method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+         <button type="submit" class="btn btn-primary">Sign Up</button>
+       </form>
+        <p>Already have account? <a href="{% url 'login' %}" >Login Here</a> </p>
+    </div>
+</div>
+{%endblock%}
